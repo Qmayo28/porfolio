@@ -1,0 +1,176 @@
+https://www.educba.com/php-keywords/?source=leftnav
+👉 TailGrids UI 👈
+https://tailgrids.com/components
+
+composer create-project laravel/laravel new_portfolio
+npm install alpinejs
+npm run watch
+
+npm install tailwindcss -s
+npx tailwindcss init
+
+tailwind.config.js- add this
+content: [
+        "./storage/framework/views/*.php",
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+    ],
+
+resource/ app.css- add this
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+webpack.mix.js- replace this
+
+mix.js("resources/js/app.js", "public/js").postCss(
+    "resources/css/app.css",
+    "public/css",
+    [require("tailwindcss")]
+);
+
+
+then - npm run watch
+
+add the style from welcome.blade.php
+-  <link href="{{asset('/css/app.css')}}" rel="stylesheet">
+
+download tailwind Material ui
+from https://tailgrids.com/pricing  Free Version
+
+then extract
+
+copy the plugin.js files then paste it your files
+copy the postcss.config.js then paste it your files
+
+open the tailwind.config.js
+copy this text  plugins: [require("./plugin")],
+
+then paste it to your taildwind.config.js
+
+add fontsize to your Plugin.js
+
+fontSize: {
+                    xs: ".875rem",
+                    tiny: ".875rem",
+                    sm: "1rem",
+                    base: "1.125rem",
+                    lg: "1.25rem",
+                    xl: "1.5rem",
+                    "2xl": "1.875rem",
+                    "3xl": "2.25rem",
+                    "4xl": "3rem",
+                    "5xl": "4rem",
+                    "6xl": "5rem",
+                    "7xl": "6rem",
+                },
+
+then npm run watch - to save changes
+
+go to Tailwind Component then copy Navbar templates
+after that paste it to your welcome.blade.php
+
+copy the tailwind.css you download before, then paste it to your resource/app.csss
+add this - @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+make a few change for .editorconfig
+-[*.php]
+indent_size = 4;
+
+php artisan make:component AppLayout
+php artisan make:component Layout/Navbar
+php artisan make:component Layout/Footer
+php artisan make:component Layout/NavbarItem
+php artisan make:component Layout/NavbarHamburger
+php artisan make:component button
+
+
+make changes on NavBar.blade
+make changes on Navbar.php
+make changes on NavbarItem.php
+
+php artisan view:clear
+
+make changes on NavbarItem.blade
+make changes on Navbarhamburger.blade
+
+php artisan make:component social-
+
+make changes on social-icons.blade
+make changes on footer.blade
+make changes on app.blade
+
+To add youtube channel button add this on Navbar.blade
+
+ <div class="ml-0 lg:ml-10 xl:ml-16 relative top-1">
+                <div class="g-ytsubscribe" data-channelid="UC_UMEcP_kF0z4E6KbxCpV1w" data-layout="default"
+                     data-count="default"></div>
+              </div>
+
+put this app.blade header to work the youtube button -> <script src="https://apis.google.com/js/platform.js"></script>
+
+php artisan make:component home/hero
+php artisan make:component home/about
+php artisan make:component home/learn-php
+php artisan make:component home/portfolio
+php artisan make:component home/video-tutorials
+php artisan make:component home/contact --view
+
+make changes on Hero.blade
+rename welcome.blade to home then make changes.
+make changes on route/web.php
+
+php artisan make:component ButtonLink
+
+make changes on ButtonLink.php
+make change on button-link.blade
+
+php artisan make:component about-dots
+
+make changes on About.blade
+make changes on about-dots
+
+php artisan make:component CallToAction
+
+make changes on CallToAction.blade
+
+php artisan make:component PortfolioItem
+make changes on Portfolio.php
+make changes on Portfolio.blade
+make changes on PorfolioItem.php
+apply Portfolio in Home.blade
+
+php artisan view:clear
+
+php artisan make:component VideoTutorialItem
+make change on video.php
+make changes on video.blade
+make changes on Video-Tutorial.php
+make changes on Video-Tutorial.blade
+
+
+make changes on Contact.blade
+php artisan make:component contact-dots-top
+php artisan make:component contact-dots-bottom
+php artisan make:component Forms/Input
+php artisan make:component Forms/Textarea
+
+put csrf meta on App.blade
+
+php artisan make:controller ContactController
+make changes on ContactController
+
+php artisan make:mail ContactMail
+make changes on ContactMail
+
+php artisan make:component Email/contact
+make changes on Contact.blade
+
+.catch(async (respone) => {
+	const res = await response.json();
+	if (response.status === 422) {
+		this.errors = res.errors;
+}
+	console.log(res);
+})
